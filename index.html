@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مذكراتي 📔</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>📔 مذكراتي</h1>
+    <div class="header-actions">
+      <button id="toggleTheme">🌗</button>
+      <input type="text" id="searchInput" placeholder="🔎 ابحث عن ملاحظة...">
+    </div>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h2>📂 مجلداتي</h2>
+      <ul id="folderList"></ul>
+      <button id="addFolderBtn">➕ إضافة مجلد</button>
+    </aside>
+
+    <main class="main">
+      <div class="toolbar">
+        <button id="addNoteBtn">➕ ملاحظة جديدة</button>
+      </div>
+
+      <div id="notesList" class="notes-list"></div>
+
+      <div id="editorSection" class="editor hidden">
+        <input type="text" id="noteTitle" placeholder="عنوان الملاحظة">
+        
+        <div id="editorToolbar" class="editor-toolbar">
+          <button onclick="format('bold')"><b>عريض</b></button>
+          <button onclick="format('italic')"><i>مائل</i></button>
+          <button onclick="format('underline')"><u>تحته خط</u></button>
+          <button onclick="format('strikeThrough')"><s>مشطوب</s></button>
+          <select onchange="formatFont(this.value)">
+            <option value="">خطوط</option>
+            <option value="Arial">Arial</option>
+            <option value="Cairo">Cairo</option>
+            <option value="Tahoma">Tahoma</option>
+            <option value="Times New Roman">Times New Roman</option>
+          </select>
+          <input type="color" onchange="formatColor(this.value)" title="لون الخط">
+          <input type="color" onchange="formatBackground(this.value)" title="خلفية الكلام">
+          <button onclick="uploadImage()">📷 تحميل صورة</button>
+        </div>
+
+        <div id="editor" contenteditable="true" class="editor-box"></div>
+
+        <div class="editor-actions">
+          <span id="counter">كلمات: 0 | حروف: 0</span>
+          <div class="editor-buttons">
+            <button id="saveNoteBtn">💾 حفظ</button>
+            <button id="exportNoteBtn">📥 تصدير</button>
+            <button id="backBtn">🔙 رجوع</button>
+            <button id="setReminderBtn">⏰ تذكير</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
