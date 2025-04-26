@@ -159,4 +159,219 @@
   .hidden {
     display: none;
   }
-  
+/************************************************/
+/* تصميم أكثر تجاوبًا للأجهزة المتوسطة (أكبر من 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-left: none;
+    margin-bottom: 1rem;
+  }
+
+  .main {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .note-card {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 5px;
+  }
+
+  .editor-box {
+    height: 250px;
+  }
+
+  .editor-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .editor-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* التصميم للأجهزة الصغيرة والمتوسطة (من 768px إلى 1024px) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-left: none;
+  }
+
+  .main {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .notes-list {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .note-card {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .editor-box {
+    height: 200px;
+  }
+
+  .editor-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .editor-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #searchInput {
+    width: 100%;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #addNoteBtn {
+    width: 100%;
+    padding: 12px 18px;
+  }
+
+  #toggleTheme {
+    font-size: 22px;
+  }
+
+  .sidebar button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* التصميم للأجهزة الصغيرة جدًا (أقل من 480px) */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  .editor-toolbar {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .editor-toolbar button,
+  .editor-toolbar select,
+  .editor-toolbar input[type="color"] {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .editor-box {
+    height: 180px;
+  }
+
+  .note-card {
+    padding: 8px;
+    margin: 5px 0;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  .editor-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .editor-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .notes-list {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  #addNoteBtn {
+    width: 100%;
+  }
+
+  #toggleTheme {
+    font-size: 18px;
+  }
+
+  .sidebar button {
+    width: 100%;
+  }
+
+  .main {
+    padding: 0.5rem;
+  }
+
+  /* تحسين استجابة النصوص والروابط */
+  h1, h2, h3 {
+    font-size: 1.25rem;
+  }
+
+  p, button, input {
+    font-size: 1rem;
+  }
+}
+
+/* تخصيص استجابة اللوائح والبطاقات */
+@media (max-width: 320px) {
+  .sidebar button {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .note-card {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .editor-box {
+    height: 150px;
+  }
+
+  .editor-toolbar button,
+  .editor-toolbar select,
+  .editor-toolbar input[type="color"] {
+    padding: 8px;
+  }
+}
